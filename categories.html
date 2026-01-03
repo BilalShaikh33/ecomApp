@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories - AdminPro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="dashboard-layout">
+        <div id="sidebar-container"></div>
+        <div class="main-content">
+            <div class="header">
+                <h1 class="page-title">Categories</h1>
+                <button class="btn btn-sm" onclick="openModal()">+ Add Category</button>
+            </div>
+
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Product Count</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body">
+                        <!-- Data here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title">Add Category</h2>
+                <button class="close-modal" onclick="closeModal()">&times;</button>
+            </div>
+            <form id="modal-form">
+                <input type="hidden" id="edit-id">
+                <div class="form-group">
+                    <label class="form-label">Category Name</label>
+                    <input type="text" class="form-input" id="cat-name" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Product Count (Demo)</label>
+                    <input type="number" class="form-input" id="cat-count" required value="0">
+                </div>
+                <button type="submit" class="btn">Save</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/12.6.0/firebase-app-compat.js"></script>   
+    <script src="https://www.gstatic.com/firebasejs/12.6.0/firebase-database-compat.js"></script>   
+<script>
+
+
+    const firebaseConfig = {
+    apiKey: "AIzaSyCp2le7xy5quxvhP-zYCrx88w4F_nVbKKw",
+    authDomain: "party-store-f0c46.firebaseapp.com",
+    projectId: "party-store-f0c46",
+    storageBucket: "party-store-f0c46.firebasestorage.app",
+    messagingSenderId: "821958592880",
+    appId: "1:821958592880:web:f4f203090a43ffa7a4a7b5",
+    measurementId: "G-Y3PKMX622X"
+  };
+  firebase.initializeApp(firebaseConfig);
+
+
+
+</script>
+    <script src="script.js"></script>
+    <script src="categories.js"></script>
+</body>
+
+</html>
