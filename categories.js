@@ -79,10 +79,11 @@
         };
 
 async function  getAllCategory(){
-    await firebase.database().ref("CATEGORY").get().then((db)=>(
+    await firebase.database().ref("CATEGORY").get().then((db)=>{ 
         console.log(db.val())
-        var 
-    ))
+        var data = object.values(db.val())
+        console.log(data)
+})
 }
 
         // render();
